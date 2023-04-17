@@ -12,5 +12,11 @@ import java.util.Scanner;
 
 
 public class PanelWest extends JPanel{
-    
+    public PanelWest()
+    {
+        while (true)
+        {
+            
+        }
+    }
 }
