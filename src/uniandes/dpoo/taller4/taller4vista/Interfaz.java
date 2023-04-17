@@ -11,11 +11,9 @@ import java.io.IOException;
 import java.util.Scanner;
 
 
-public class Interfaz extends JFrame implements ActionListener {
+public class Interfaz extends JFrame {
 
     //private Container container;
-    private JLabel jugadores = this.crearLabel("");
-    private JLabel jugadas = this.crearLabel("");
 
 
 
@@ -27,49 +25,15 @@ public class Interfaz extends JFrame implements ActionListener {
         
         
         PanelNorte norte = new PanelNorte();
-        //JPanel norte = new JPanel();
-        //norte.setBackground(Color.GREEN); //deberia ponerlo en otra clase
         PanelEast oriente = new PanelEast();
+        PanelSouth sur = new PanelSouth();
 
         add(norte, BorderLayout.NORTH);
         add(oriente, BorderLayout.EAST);
+        add(sur, BorderLayout.SOUTH);
         setVisible(true);
     }
 
-    public JLabel crearLabel(String texto){
-        JLabel label = new JLabel(texto);
-        label.setAlignmentX(Component.CENTER_ALIGNMENT);
-        return label;
-    }
+}   
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        String comando = e.getActionCommand();
-        if (comando.equals("Llenar")) {
-            JTextField nombre = new JTextField();
-            JTextField edad = new JTextField();
-            JTextField email = new JTextField();
-
-            final JComponent[] formulario = new JComponent[] {
-                new JLabel("Nombre"),
-                nombre,
-                new JLabel("Edad"),
-                edad,
-                new JLabel("Email"),
-                email
-            };
-            int resultado = JOptionPane.showConfirmDialog(this, formulario, "Llenar formulario", JOptionPane.OK_CANCEL_OPTION);
-            if (resultado == JOptionPane.OK_OPTION && (nombre.getText().equals("") || edad.getText().equals("") || email.getText().equals(""))) {
-                JOptionPane.showMessageDialog(this, new JLabel("Tienes que completar todos tus datos."), "Error", JOptionPane.ERROR_MESSAGE);
-            }
-            else if (resultado == JOptionPane.CANCEL_OPTION){}
-            else {
-                this.jugadas.setText(nombre.getText());
-                this.jugadores.setText(edad.getText());
-                
-            }
-        
-    }
-
-    }
-}
+    

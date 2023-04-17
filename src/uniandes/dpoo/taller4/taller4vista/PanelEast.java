@@ -1,6 +1,5 @@
 package uniandes.dpoo.taller4.taller4vista;
 
-import javax.swing.JPanel;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -18,17 +17,20 @@ public class PanelEast extends JPanel{
         setBackground(Color.GRAY.brighter()); //deberia ponerlo en otra clase
         setSize(200, 500);
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        setAlignmentY(CENTER_ALIGNMENT);
+        
 
-        JButton nuevo = new JButton("Nuevo");
-        JButton reset = new JButton("Reiniciar");
-        JButton top = new JButton("Top 10");
+        JButton nuevo = new JButton("        Nuevo        ");
+        JButton reset = new JButton("      Reiniciar      ");
+        JButton top = new JButton("       Top  10       ");
         JButton playerchange = new JButton("Cambiar Jugador");
 
+        
+        setAlignmentY(Component.CENTER_ALIGNMENT);
         add(nuevo);
         add(reset);
         add(top);
         add(playerchange);
+        
 
         
 
