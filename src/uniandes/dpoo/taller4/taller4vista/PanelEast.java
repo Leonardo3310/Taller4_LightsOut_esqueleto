@@ -20,16 +20,19 @@ public class PanelEast extends JPanel{
         
 
         JButton nuevo = new JButton("        Nuevo        ");
-        JButton reset = new JButton("      Reiniciar      ");
+        JButton reset = new JButton("       Reiniciar      ");
         JButton top = new JButton("       Top  10       ");
+        top.setBackground(Color.MAGENTA);
         JButton playerchange = new JButton("Cambiar Jugador");
 
         
         setAlignmentY(Component.CENTER_ALIGNMENT);
+        add(Box.createVerticalGlue());
         add(nuevo);
         add(reset);
         add(top);
         add(playerchange);
+        add(Box.createVerticalGlue());
         
 
         
