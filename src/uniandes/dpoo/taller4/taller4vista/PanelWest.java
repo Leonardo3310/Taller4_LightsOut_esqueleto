@@ -9,21 +9,19 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
-
-
-import java.awt.*;
-import javax.swing.*;
 import java.awt.event.*;
 import java.net.*;
 
 public class PanelWest extends JPanel implements MouseListener {
     private boolean[][] lights;
-        
+    private Tablero tablero;
     
 
     public PanelWest(int tamanio) 
     {
+        //this.tablero = new Tablero(tamanio);
         lights = new boolean[tamanio][tamanio+1];
+        //this.lights = tablero.darTablero();
         addMouseListener(this);
         setPreferredSize(new Dimension(601, 501));
         setMinimumSize(new Dimension(601, 501));
@@ -83,6 +81,7 @@ public class PanelWest extends JPanel implements MouseListener {
         int row = mouseY / boxHeight;
 
         toggle(row, col);
+        //this.tablero.jugar(col, row);
         repaint();
     }
 
