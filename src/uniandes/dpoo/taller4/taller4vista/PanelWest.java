@@ -45,8 +45,8 @@ public class PanelWest extends JPanel implements MouseListener {
     public void mouseExited(MouseEvent e) {}
     @Override
     public void paintComponent(Graphics g) {
-        int boxWidth = 600 / 6;
-        int boxHeight = 500 / 5;
+        int boxWidth = 600 / this.tamanio+1;
+        int boxHeight = 500 / this.tamanio;
 
         int y = 0;
         for (int row = 0; row < this.tamanio; row++) {
@@ -87,9 +87,8 @@ public class PanelWest extends JPanel implements MouseListener {
         repaint();
     }
 
-    // called to "toggle" the selected row and column, as well as the four
-    // adjacent lights
-    public void toggle(int row, int col) {
+   
+    public void toggle1(int row, int col) {
 
         if (row >= 0 && col >= 0 && row < lights.length && 
             col < lights[0].length)
@@ -102,4 +101,23 @@ public class PanelWest extends JPanel implements MouseListener {
         }
 
     }
+    public void toggle(int fila, int columna)
+	{
+		int tam = lights.length;
+
+		for (int df = -1; df < 2; df++)
+		{
+			for (int dc = -1; dc < 2; dc++)
+			{
+				int f = fila + df;
+				int c = columna + dc;
+				if (f >= 0 && f < tam && c >= 0 && c < tam)
+				{
+					lights[f][c] = !lights[f][c];
+				}
+			}
+		}
+		//jugadas++;
+	}
+
 }
