@@ -15,19 +15,21 @@ import java.net.*;
 public class PanelWest extends JPanel implements MouseListener {
     private boolean[][] lights;
     private Tablero tablero;
+    private int tamanio;
     
 
     public PanelWest(int tamanio) 
     {
+        this.tamanio = tamanio;
         //this.tablero = new Tablero(tamanio);
-        lights = new boolean[tamanio][tamanio+1];
+        lights = new boolean[this.tamanio][this.tamanio+1];
         //this.lights = tablero.darTablero();
         addMouseListener(this);
         setPreferredSize(new Dimension(601, 501));
         setMinimumSize(new Dimension(601, 501));
         //lights = new boolean[5][6];
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 6; j++) {
+        for (int i = 0; i < tamanio; i++) {
+            for (int j = 0; j < tamanio; j++) {
                 lights[i][j] = true;
             }
         }
@@ -47,9 +49,9 @@ public class PanelWest extends JPanel implements MouseListener {
         int boxHeight = 500 / 5;
 
         int y = 0;
-        for (int row = 0; row < 5; row++) {
+        for (int row = 0; row < this.tamanio; row++) {
             int x = 0;
-            for (int col = 0; col < 6; col++) {
+            for (int col = 0; col < this.tamanio; col++) {
                 if (lights[row][col]==true) {
                     g.setColor(Color.YELLOW);
                 } else {
