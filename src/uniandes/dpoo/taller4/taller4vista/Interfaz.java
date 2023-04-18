@@ -27,7 +27,7 @@ public class Interfaz extends JFrame {
         PanelNorte norte = new PanelNorte();
         PanelEast oriente = new PanelEast();
         PanelSouth sur = new PanelSouth();
-        PanelWest occidente = new PanelWest(5);
+        PanelWest occidente = new PanelWest(6);
 
         add(norte, BorderLayout.NORTH);
         add(oriente, BorderLayout.EAST);
