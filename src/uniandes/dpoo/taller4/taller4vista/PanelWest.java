@@ -1,7 +1,6 @@
 package uniandes.dpoo.taller4.taller4vista;
 import uniandes.dpoo.taller4.modelo.*;
 import javax.swing.JPanel;
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.BufferedWriter;
@@ -13,7 +12,6 @@ import java.awt.event.*;
 import java.net.*;
 
 public class PanelWest extends JPanel implements MouseListener {
-    private boolean[][] lights;
     private Tablero tablero;
     private int tamanio;
     
@@ -24,21 +22,24 @@ public class PanelWest extends JPanel implements MouseListener {
         this.tablero = new Tablero(tamanio);
         tablero.desordenar(3);
         addMouseListener(this);
-        setPreferredSize(new Dimension(601, 501));
-        setMinimumSize(new Dimension(601, 501));
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int screenWidth = screenSize.width;
+        int screenHeight = screenSize.height;
+        setPreferredSize(new Dimension(tamanio*100, tamanio*100));
+        setMinimumSize(new Dimension(tamanio*100, tamanio*100));
 
     }
 
     @Override
     public void paintComponent(Graphics g) {
-        int boxWidth = 600 / this.tamanio+1;
-        int boxHeight = 500 / this.tamanio;
+        int boxWidth = tamanio*90 / this.tamanio;
+        int boxHeight = tamanio*90 / this.tamanio;
 
         int y = 0;
         for (int row = 0; row < this.tamanio; row++) {
             int x = 0;
             for (int col = 0; col < this.tamanio; col++) {
-                if (tablero.darTablero()[row][col]==true) {
+                if (tablero.darTablero()[row][col]==false) {
                     g.setColor(Color.YELLOW);
                 } else {
                     g.setColor(Color.BLACK);
@@ -54,11 +55,14 @@ public class PanelWest extends JPanel implements MouseListener {
     }
 
     public void mousePressed(MouseEvent e) {
-        int mouseX = e.getX();
-        int mouseY = e.getY();
+        int mouseX = e.getXOnScreen();
+        int mouseY = e.getYOnScreen();
 
         int panelWidth = getWidth();
         int panelHeight = getHeight();
+
+        //int boxWidth = panelWidth / tablero.darTablero()[0].length;
+        //int boxHeight = panelHeight / tablero.darTablero().length;
 
         int boxWidth = panelWidth / tablero.darTablero()[0].length;
         int boxHeight = panelHeight / tablero.darTablero().length;
