@@ -22,7 +22,7 @@ public class PanelEast extends JPanel{
         JButton nuevo = new JButton("        Nuevo        ");
         JButton reset = new JButton("       Reiniciar      ");
         JButton top = new JButton("       Top  10       ");
-        top.setBackground(Color.MAGENTA);
+        //top.setBackground(Color.MAGENTA);
         JButton playerchange = new JButton("Cambiar Jugador");
 
         
