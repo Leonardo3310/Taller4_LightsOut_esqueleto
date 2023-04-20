@@ -36,17 +36,17 @@ public class PanelWest extends JPanel implements MouseListener {
         int boxHeight = tamanio*90 / this.tamanio;
 
         int y = 0;
-        for (int row = 0; row < this.tamanio; row++) {
+        for (int fila = 0; fila < this.tamanio; fila++) {
             int x = 0;
             for (int col = 0; col < this.tamanio; col++) {
-                if (tablero.darTablero()[row][col]==false) {
+                if (tablero.darTablero()[fila][col]==false) {
                     g.setColor(Color.YELLOW);
                 } else {
                     g.setColor(Color.BLACK);
                 }
                 g.fillRect(x, y, boxWidth, boxHeight);
 
-                g.setColor(Color.BLUE);
+                g.setColor(Color.WHITE);
                 g.drawRect(x, y, boxWidth, boxHeight);
                 x += boxWidth;
             }
@@ -55,6 +55,9 @@ public class PanelWest extends JPanel implements MouseListener {
     }
 
     public void mousePressed(MouseEvent e) {
+        //int mouseX = e.getX();
+        //int mouseY = e.getY();
+
         int mouseX = e.getXOnScreen();
         int mouseY = e.getYOnScreen();
 
@@ -81,6 +84,11 @@ public class PanelWest extends JPanel implements MouseListener {
     public void mouseEntered(MouseEvent e) {}
 
     public void mouseExited(MouseEvent e) {}
+
+    public int jugadas ()
+    {
+        return this.tablero.darJugadas();
+    } 
     
 
 }

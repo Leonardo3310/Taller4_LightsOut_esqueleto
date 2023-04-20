@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
-public class PanelEast extends JPanel{
+public class PanelEast extends JPanel implements ActionListener{
 
         public PanelEast()
         {
@@ -20,10 +20,15 @@ public class PanelEast extends JPanel{
         
 
         JButton nuevo = new JButton("        Nuevo        ");
+        nuevo.addActionListener(this);
         JButton reset = new JButton("       Reiniciar      ");
+        reset.addActionListener(this);
         JButton top = new JButton("       Top  10       ");
+        top.addActionListener(this);
         //top.setBackground(Color.MAGENTA);
         JButton playerchange = new JButton("Cambiar Jugador");
+        playerchange.addActionListener(this);
+
 
         
         setAlignmentY(Component.CENTER_ALIGNMENT);
@@ -34,6 +39,8 @@ public class PanelEast extends JPanel{
         add(playerchange);
         add(Box.createVerticalGlue());
         
+        
+        
 
         
 
@@ -41,4 +48,16 @@ public class PanelEast extends JPanel{
         //JRadioButton facil = new JRadioButton();
 
     }    
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String comando = e.getActionCommand();
+        if (comando.equals("        Nuevo        "))
+        {
+            
+        }
+        else if (comando.equals("       Reiniciar      "))
+        {
+
+        }
+    }
 }

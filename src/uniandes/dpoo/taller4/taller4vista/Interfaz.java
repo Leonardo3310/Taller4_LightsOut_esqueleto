@@ -21,19 +21,19 @@ public class Interfaz extends JFrame {
         setTitle("Lights Out");
         setSize(600, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-
-        
-        
+        String nickname = JOptionPane.showInputDialog("Type your name please");
         PanelNorte norte = new PanelNorte();
         PanelEast oriente = new PanelEast();
-        PanelSouth sur = new PanelSouth();
         PanelWest occidente = new PanelWest(5);
-
+        PanelSouth sur = new PanelSouth(occidente.jugadas(), nickname);
+        
         add(norte, BorderLayout.NORTH);
         add(oriente, BorderLayout.EAST);
+        add(occidente, BorderLayout.WEST);    
         add(sur, BorderLayout.SOUTH);
-        add(occidente, BorderLayout.WEST);
         setVisible(true);
+       
+        
     }
 
 }   

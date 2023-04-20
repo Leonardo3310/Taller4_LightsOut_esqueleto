@@ -10,14 +10,13 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class PanelSouth extends JPanel {
-    public PanelSouth ()
+    public PanelSouth (int jugadas, String nickname)
     {
         setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
         setBackground(Color.WHITE);
 
-        int cantidadjuegos = 3;
-        String nickname = JOptionPane.showInputDialog("Type your name please");
-        JLabel Jugadas = new JLabel("Jugadas");
+        int cantidadjuegos = jugadas;
+        JLabel Jugadas = new JLabel("Jugadas:  ");
         JLabel cantidad = new JLabel(String.valueOf(cantidadjuegos));
         JLabel Jugador = new JLabel("Jugador: "); 
         JLabel nombreJugador = new JLabel(nickname);
