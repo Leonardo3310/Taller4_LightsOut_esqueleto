@@ -16,11 +16,11 @@ public class PanelWest extends JPanel implements MouseListener {
     private int tamanio;
     
 
-    public PanelWest(int tamanio) 
+    public PanelWest(int tamanio, int dificultad) 
     {
         this.tamanio = tamanio;
         this.tablero = new Tablero(tamanio);
-        tablero.desordenar(3);
+        tablero.desordenar(dificultad);
         addMouseListener(this);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int screenWidth = screenSize.width;

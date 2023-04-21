@@ -24,7 +24,7 @@ public class Interfaz extends JFrame {
         String nickname = JOptionPane.showInputDialog("Type your name please");
         PanelNorte norte = new PanelNorte();
         PanelEast oriente = new PanelEast();
-        PanelWest occidente = new PanelWest(5);
+        PanelWest occidente = new PanelWest(5,3);
         //PanelSouth sur = new PanelSouth(occidente.jugadas(), nickname);
          
         add(norte, BorderLayout.NORTH);
