@@ -29,7 +29,7 @@ public class PanelNorte extends JPanel{
         JLabel tamanio = new JLabel("Table Size");
         this.add(tamanio);  
 
-        String[] tamanios = {"4x4","5x5", "6x6","7x7","8x8","9x9"};     
+        String[] tamanios = {"4x4","5x5", "6x6"};     
         combotamanios = new JComboBox<>(tamanios);
         this.add(combotamanios);
 

@@ -4,22 +4,17 @@ package uniandes.dpoo.taller4.taller4vista;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Scanner;
 
 
 public class Interfaz extends JFrame implements ActionListener{
 
     PanelNorte arriba = new PanelNorte(this);
     PanelEast derecha = new PanelEast(this);
-    PanelWest tablero = new PanelWest(5,3,this);
+    PanelWest tablero = new PanelWest(4,3,this);
 
     PanelSouth abajo;
     int dificultad = 3;
-    int size = 5;
+    int size = 4;
 
     JButton nuevo;
     JButton reset;
@@ -53,21 +48,19 @@ public class Interfaz extends JFrame implements ActionListener{
         {   
             
             PanelSouth abajo = new PanelSouth(tablero.jugadas(), nickname);
-            //this.remove(sur);
             this.add(abajo, BorderLayout.SOUTH);
             setVisible(true);
-            //sur.removeAll();
-            //sur.revalidate();
-            //sur.repaint();
+            
             
             
         }
         
     }
 
-    public void nuevoJuego()
+    public void nuevoJuego(int tamanio)
     {
-        tablero.nuevoPanel(size, dificultad);
+		this.size = tamanio;
+        tablero.nuevoPanel(this.size, this.dificultad);
     }
 
     @Override
@@ -85,7 +78,7 @@ public class Interfaz extends JFrame implements ActionListener{
 
 		facil = arriba.facil;
 		medio = arriba.medio;
-		dificil = arriba.medio;
+		dificil = arriba.dificil;
 
 		combotamanios = arriba.combotamanios;
 
@@ -93,7 +86,7 @@ public class Interfaz extends JFrame implements ActionListener{
 
 		if (e.getSource() == nuevo)
 		{
-			nuevoJuego();
+			nuevoJuego(size);
 		}
 
 		else if (e.getSource() == reset)
@@ -118,19 +111,19 @@ public class Interfaz extends JFrame implements ActionListener{
 		else if (e.getSource() == facil)
 		{
 			dificultad = 3;
-			nuevoJuego();
+			nuevoJuego(size);
 		}
 
 		else if (e.getSource() == medio)
 		{
 			dificultad = 5;
-			nuevoJuego();
+			nuevoJuego(size);
 		}
 
 		else if (e.getSource() == dificil)
 		{
 			dificultad = 7;
-			nuevoJuego();
+			nuevoJuego(size);
 		}
 
 		else if (e.getSource() == combotamanios)
@@ -139,39 +132,23 @@ public class Interfaz extends JFrame implements ActionListener{
 			if (selectedSize.equals("4x4"))
 			{
 				size = 4;
-				nuevoJuego();
+				nuevoJuego(4);
 			}
 
 			else if (selectedSize.equals("5x5"))
 			{
 				size = 5;
-				nuevoJuego();
+				nuevoJuego(5);
 			}
 
 			else if (selectedSize.equals("6x6"))
 			{
 				size = 6;
-				nuevoJuego();
+				nuevoJuego(6);
 			}
 
-			else if (selectedSize.equals("7x7"))
-			{
-				size = 7;
-				nuevoJuego();
-			}
-
-			else if (selectedSize.equals("8x8"))
-			{
-				size = 8;
-				nuevoJuego();
-			}
-
-			else if (selectedSize.equals("9x9"))
-			{
-				size = 9;
-				nuevoJuego();
-			}
-
+			
+			
 		}
 
 	}

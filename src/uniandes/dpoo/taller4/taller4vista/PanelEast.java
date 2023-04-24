@@ -2,12 +2,7 @@ package uniandes.dpoo.taller4.taller4vista;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Scanner;
+
 public class PanelEast extends JPanel {
 
         JButton nuevo;
@@ -38,10 +33,10 @@ public class PanelEast extends JPanel {
 
         
         setAlignmentY(Component.CENTER_ALIGNMENT);
-        playerchange.addActionListener(interfaz);
-        nuevo.addActionListener(interfaz);
-        reset.addActionListener(interfaz);
-        top.addActionListener(interfaz);
+        playerchange.addActionListener(this.interfaz);
+        nuevo.addActionListener(this.interfaz);
+        reset.addActionListener(this.interfaz);
+        top.addActionListener(this.interfaz);
         this.add(Box.createVerticalGlue());
         this.add(nuevo);
         this.add(reset);

@@ -57,9 +57,15 @@ public class PanelWest extends JPanel implements MouseListener {
 
     public void nuevoPanel(int tamanio, int dificultad){
     	//cada panel nuevo
+        this.tamanio = tamanio;
         this.removeAll();
-        this.tablero = new Tablero(tamanio);
-        tablero.desordenar(dificultad); 
+        this.tablero = new Tablero(this.tamanio);
+        tablero.desordenar(dificultad);
+        int largo = tablero.darTablero().length; 
+        GridLayout l = new GridLayout(largo,largo);
+        setLayout(l);
+        setPreferredSize(new Dimension(tamanio*100, tamanio*100));
+        setMinimumSize(new Dimension(tamanio*100, tamanio*100));
         actualizarPanel();
     }
 
