@@ -13,12 +13,12 @@ import java.util.Scanner;
 
 public class Interfaz extends JFrame implements ActionListener{
 
-    PanelWest tablero; 
-    PanelEast derecha;
-    PanelNorte arriba;
+    PanelNorte arriba = new PanelNorte(this);
+    PanelEast derecha = new PanelEast(this);
+    PanelWest tablero = new PanelWest(5,3,this);
 
     PanelSouth abajo;
-    int dificultad = 1;
+    int dificultad = 3;
     int size = 5;
 
     JButton nuevo;
@@ -35,13 +35,11 @@ public class Interfaz extends JFrame implements ActionListener{
 
     public Interfaz() {
         setTitle("Lights Out");
-        setSize(800, 700);
+        setSize(800, 650);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(true);
         String nickname = JOptionPane.showInputDialog("Type your name please");
-        PanelNorte arriba = new PanelNorte(this);
-        PanelEast derecha = new PanelEast(this);
-        PanelWest tablero = new PanelWest(5,3,this);
+        
         //PanelSouth sur = new PanelSouth(occidente.jugadas(), nickname);
          
         this.add(arriba, BorderLayout.NORTH);
