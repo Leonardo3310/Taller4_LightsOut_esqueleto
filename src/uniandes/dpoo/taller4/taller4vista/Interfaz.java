@@ -32,7 +32,7 @@ public class Interfaz extends JFrame implements ActionListener{
 
     public Interfaz() {
         setTitle("Lights Out");
-        setSize(730, 650);
+        setSize(760, 650);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
         nickname = JOptionPane.showInputDialog("Type your name please");

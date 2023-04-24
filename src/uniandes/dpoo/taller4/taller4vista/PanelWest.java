@@ -8,11 +8,11 @@ import java.awt.event.*;
 public class PanelWest extends JPanel implements MouseListener {
     private Tablero tablero;
     private int tamanio;
-    private Interfaz interfaz;
+    //private Interfaz interfaz;
 
     public PanelWest(int tamanio, int dificultad, Interfaz interfaz) 
     {
-        this.interfaz = interfaz;
+        //this.interfaz = interfaz;
         this.tamanio = tamanio;
         this.tablero = new Tablero(tamanio);
         tablero.desordenar(dificultad);
