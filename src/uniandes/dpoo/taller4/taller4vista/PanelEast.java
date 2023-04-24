@@ -9,12 +9,12 @@ public class PanelEast extends JPanel {
         JButton reset;
         JButton top;
         JButton playerchange;
-        private Interfaz interfaz;
+        //private Interfaz interfaz;
 
         public PanelEast(Interfaz interfaz)
         {
         
-        this.interfaz = interfaz;
+        //this.interfaz = interfaz;
         setBackground(Color.GRAY.brighter()); //deberia ponerlo en otra clase
         setSize(200, 500);
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -33,10 +33,10 @@ public class PanelEast extends JPanel {
 
         
         setAlignmentY(Component.CENTER_ALIGNMENT);
-        playerchange.addActionListener(this.interfaz);
-        nuevo.addActionListener(this.interfaz);
-        reset.addActionListener(this.interfaz);
-        top.addActionListener(this.interfaz);
+        playerchange.addActionListener(interfaz);
+        nuevo.addActionListener(interfaz);
+        reset.addActionListener(interfaz);
+        top.addActionListener(interfaz);
         this.add(Box.createVerticalGlue());
         this.add(nuevo);
         this.add(reset);

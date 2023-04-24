@@ -13,11 +13,11 @@ public class PanelNorte extends JPanel{
 
     JComboBox<String> combotamanios;
 
-    private Interfaz interfaz;
+    //private Interfaz interfaz;
 
     public PanelNorte(Interfaz interfaz)
     {
-        this.interfaz = interfaz;
+        //this.interfaz = interfaz;
         setBackground(Color.CYAN.darker()); //deberia ponerlo en otra clase
 
         JLabel tamanio = new JLabel("Table Size");
@@ -40,10 +40,10 @@ public class PanelNorte extends JPanel{
         this.add(facil);
         this.add(medio);
         this.add(dificil);
-        combotamanios.addActionListener(this.interfaz);
-        facil.addActionListener(this.interfaz);
-        medio.addActionListener(this.interfaz);
-        dificil.addActionListener(this.interfaz);
+        combotamanios.addActionListener(interfaz);
+        facil.addActionListener(interfaz);
+        medio.addActionListener(interfaz);
+        dificil.addActionListener(interfaz);
 
 
 
