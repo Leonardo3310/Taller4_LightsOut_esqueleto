@@ -72,7 +72,7 @@ public class Interfaz extends JFrame implements ActionListener{
         tablero.nuevoPanel(size, dificultad);
     }
 
-    //@Override
+    @Override
 	public void actionPerformed(ActionEvent e)
 	{
 
