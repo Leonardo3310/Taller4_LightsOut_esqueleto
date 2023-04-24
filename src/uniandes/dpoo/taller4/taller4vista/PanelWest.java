@@ -14,17 +14,18 @@ import java.net.*;
 public class PanelWest extends JPanel implements MouseListener {
     private Tablero tablero;
     private int tamanio;
-    
+    private Interfaz interfaz;
 
-    public PanelWest(int tamanio, int dificultad) 
+    public PanelWest(int tamanio, int dificultad, Interfaz interfaz) 
     {
+        this.interfaz = interfaz;
         this.tamanio = tamanio;
         this.tablero = new Tablero(tamanio);
         tablero.desordenar(dificultad);
         addMouseListener(this);
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int screenWidth = screenSize.width;
-        int screenHeight = screenSize.height;
+        //Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        //int screenWidth = screenSize.width;
+        //int screenHeight = screenSize.height;
         setPreferredSize(new Dimension(tamanio*100, tamanio*100));
         setMinimumSize(new Dimension(tamanio*100, tamanio*100));
 
@@ -54,6 +55,14 @@ public class PanelWest extends JPanel implements MouseListener {
         }
     }
 
+    public void nuevoPanel(int tamanio, int dificultad){
+    	//cada panel nuevo
+        this.removeAll();
+        this.tablero = new Tablero(tamanio);
+        tablero.desordenar(dificultad); 
+        actualizarPanel();
+    }
+
     public void mousePressed(MouseEvent e) {
         //int mouseX = e.getX();
         //int mouseY = e.getY();
@@ -74,6 +83,9 @@ public class PanelWest extends JPanel implements MouseListener {
         int row = mouseY / boxHeight;
 
         this.tablero.jugar(col, row);
+        repaint();
+    }
+    public void actualizarPanel(){
         repaint();
     }
 
