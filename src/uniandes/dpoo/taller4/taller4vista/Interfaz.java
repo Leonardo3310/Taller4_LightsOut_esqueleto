@@ -25,15 +25,17 @@ public class Interfaz extends JFrame implements ActionListener{
     JRadioButton medio;
     JRadioButton dificil;
 
+	String nickname;
+
     JComboBox<String> combotamanios;
 
 
     public Interfaz() {
         setTitle("Lights Out");
-        setSize(800, 650);
+        setSize(730, 650);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setResizable(true);
-        String nickname = JOptionPane.showInputDialog("Type your name please");
+        setResizable(false);
+        nickname = JOptionPane.showInputDialog("Type your name please");
         
         //PanelSouth sur = new PanelSouth(occidente.jugadas(), nickname);
          
@@ -103,7 +105,7 @@ public class Interfaz extends JFrame implements ActionListener{
 
 		else if (e.getSource() == playerchange)
 		{
-			//new IngresarNombre();
+			nickname = JOptionPane.showInputDialog("Type your name please");
 		}
 
 		// Panel de arriba

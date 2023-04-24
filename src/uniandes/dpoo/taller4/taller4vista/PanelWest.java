@@ -3,13 +3,7 @@ import uniandes.dpoo.taller4.modelo.*;
 import javax.swing.JPanel;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Scanner;
-import java.awt.event.*;
-import java.net.*;
+
 
 public class PanelWest extends JPanel implements MouseListener {
     private Tablero tablero;
@@ -70,17 +64,12 @@ public class PanelWest extends JPanel implements MouseListener {
     }
 
     public void mousePressed(MouseEvent e) {
-        //int mouseX = e.getX();
-        //int mouseY = e.getY();
 
         int mouseX = e.getXOnScreen();
         int mouseY = e.getYOnScreen();
 
         int panelWidth = getWidth();
         int panelHeight = getHeight();
-
-        //int boxWidth = panelWidth / tablero.darTablero()[0].length;
-        //int boxHeight = panelHeight / tablero.darTablero().length;
 
         int boxWidth = panelWidth / tablero.darTablero()[0].length;
         int boxHeight = panelHeight / tablero.darTablero().length;
